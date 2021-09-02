@@ -1,16 +1,19 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import MainPage from "../MainPage/MainPage";
-import MarketPage from "../MarketPage/MarketPage";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import AppPage from "../AppPage/AppPage";
 
 const App = () => {
+  const isAuth = true;
+
   return (
     <div className="app">
       <header className="app__header"></header>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <ProtectedRoute path="/market" component={MarketPage} />
+        <Route path="*">
+          {isAuth ? <AppPage /> : <Redirect to="/" />}
+        </Route>
       </Switch>
       <footer className="app__footer"></footer>
     </div>
