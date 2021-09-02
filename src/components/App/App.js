@@ -1,12 +1,17 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MainPage from "../MainPage/MainPage";
+import MarketPage from "../MarketPage/MarketPage";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
     <div className="app">
       <header className="app__header"></header>
-      <main className="app__main">
-        <h1 className="app__title">React app</h1>
-      </main>
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <ProtectedRoute path="/market" component={MarketPage} />
+      </Switch>
       <footer className="app__footer"></footer>
     </div>
   );
