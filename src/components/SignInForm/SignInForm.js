@@ -5,15 +5,13 @@ import { signIn } from "../../redux/actions/auth";
 
 const SingInForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (values) => {
-    console.log(values);
-    dispatch(signIn(values));
-  };
 
   return (
     <Formik
       initialValues={{ email: "", password: "", isRemember: true }}
-      onSubmit={handleSubmit}
+      onSubmit={(values) => {
+        dispatch(signIn(values));
+      }}
     >
       {({ values }) => (
         <Form className="sign-in">

@@ -1,9 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/actions";
 import MainPageNav from "../MainPageNav/MainPageNav";
 import SingInForm from "../SignInForm/SignInForm";
 
 const MainPage = () => {
+  const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuth);
 
   return (
@@ -17,7 +19,13 @@ const MainPage = () => {
               <div className="main-page__user-icon"></div>
               <p className="main-page__user-name">user 1</p>
             </div>
-            <button type="button" className="main-page__logout"></button>
+            <button
+              type="button"
+              className="main-page__logout"
+              onClick={() => {
+                dispatch(logout());
+              }}
+            ></button>
           </div>
         ) : (
           <SingInForm />

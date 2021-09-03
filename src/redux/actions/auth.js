@@ -29,3 +29,12 @@ export function signIn(values) {
       });
   };
 }
+
+export function logout() {
+  return (dispatch) => {
+    localStorage.removeItem("token");
+    dispatch({
+      type: types.LOGOUT_SUCCESS,
+    });
+  };
+}
