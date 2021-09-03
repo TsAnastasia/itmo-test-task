@@ -2,7 +2,7 @@ import * as types from "../types";
 
 const token = localStorage.getItem("token");
 
-const initialStore = { isAuth: !token, user: null, token };
+const initialStore = { isAuth: !!token, user: null, token };
 
 export default function auth(state = initialStore, action) {
   switch (action.type) {
