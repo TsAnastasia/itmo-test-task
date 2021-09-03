@@ -9,29 +9,33 @@ const MainPage = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
 
   return (
-    <main className="main-page">
-      <MainPageNav />
-      <section className="main-page__content">
-        <h1 className="app__title">Welcome to the ...</h1>
-        {isAuth ? (
-          <div className="main-page__auth">
-            <div className="main-page__user">
-              <div className="main-page__user-icon"></div>
-              <p className="main-page__user-name">user 1</p>
+    <div className="main-page">
+      <header className="main-page__header"></header>
+      <main className="main-page__content">
+        <MainPageNav />
+        <section className="main-page__content">
+          <h1 className="app__title">Welcome to the ...</h1>
+          {isAuth ? (
+            <div className="main-page__auth">
+              <div className="main-page__user">
+                <div className="main-page__user-icon"></div>
+                <p className="main-page__user-name">user 1</p>
+              </div>
+              <button
+                type="button"
+                className="main-page__logout"
+                onClick={() => {
+                  dispatch(logout());
+                }}
+              ></button>
             </div>
-            <button
-              type="button"
-              className="main-page__logout"
-              onClick={() => {
-                dispatch(logout());
-              }}
-            ></button>
-          </div>
-        ) : (
-          <SingInForm />
-        )}
-      </section>
-    </main>
+          ) : (
+            <SingInForm />
+          )}
+        </section>
+      </main>
+      <footer className="main-page__footer"></footer>
+    </div>
   );
 };
 

@@ -7,14 +7,16 @@ import UserPage from "../UserPage/UserPage";
 
 const AppPage = () => {
   return (
-    <main className="app-page">
+    <div className="app-page">
+      <header className="app-page__header"></header>
       <Navigation />
       <Switch>
         <Route path="/market" component={MarketPage} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/user" component={UserPage} />
       </Switch>
-    </main>
+      <footer className="app-page__footer"></footer>
+    </div>
   );
 };
 

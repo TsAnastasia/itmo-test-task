@@ -11,18 +11,14 @@ const App = () => {
 
   React.useEffect(() => {
     dispatch(recieveAuth());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="app">
-      <header className="app__header"></header>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="*">{isAuth ? <AppPage /> : <Redirect to="/" />}</Route>
-      </Switch>
-      <footer className="app__footer"></footer>
-    </div>
+    <Switch>
+      <Route exact path="/" component={MainPage} />
+      <Route path="*">{isAuth ? <AppPage /> : <Redirect to="/" />}</Route>
+    </Switch>
   );
 };
 
