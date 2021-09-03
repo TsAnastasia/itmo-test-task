@@ -1,9 +1,13 @@
 import { Formik, Form, Field } from "formik";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../redux/actions/auth";
 
 const SingInForm = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (values) => {
     console.log(values);
+    dispatch(signIn(values));
   };
 
   return (
@@ -39,10 +43,10 @@ const SingInForm = () => {
               name="isRemember"
             />
             <span
-            className={`sign-in__remember-checkbox ${
-              values.isRemember && "sign-in__remember-checkbox_active"
-            }`}
-          ></span>
+              className={`sign-in__remember-checkbox ${
+                values.isRemember && "sign-in__remember-checkbox_active"
+              }`}
+            ></span>
             <span className="sign-in__remember-text">Remember password</span>
           </label>
         </Form>

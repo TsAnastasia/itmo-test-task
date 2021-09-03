@@ -16,7 +16,7 @@ export default function auth(state = initialStore, action) {
     case types.RECIEVE_AUTH_SUCCESS:
       return {
         ...state,
-        isAuthenticated: true,
+        isAuth: true,
         user: action.payload.user,
       };
     case types.SIGNIN_FAILURE:
@@ -24,7 +24,7 @@ export default function auth(state = initialStore, action) {
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
-        isAuthenticated: false,
+        isAuth: false,
         user: null,
         token: "",
       };
