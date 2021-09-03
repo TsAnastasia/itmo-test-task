@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import "./Navigation.css";
 import { logout } from "../../redux/actions";
 
 const Navigation = () => {

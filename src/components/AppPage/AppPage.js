@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import "./AppPage.css";
 import MarketPage from "../MarketPage/MarketPage";
 import Navigation from "../Navigation/Navigation";
 import ProjectsPage from "../ProjectsPage/ProjectsPage";

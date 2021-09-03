@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./Roboto-Light.woff2") format("woff2"),
+    url("./Roboto-Light.woff") format("woff"),
+    url("./Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./Roboto-Medium.woff2") format("woff2"),
+    url("./Roboto-Medium.woff") format("woff"),
+    url("./Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./OpenSans-Light.woff2") format("woff2"),
+    url("./OpenSans-Light.woff") format("woff"),
+    url("./OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./OpenSans-Regular.woff2") format("woff2"),
+    url("./OpenSans-Regular.woff") format("woff"),
+    url("./OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./OpenSans-Bold.woff2") format("woff2"),
+    url("./OpenSans-Bold.woff") format("woff"),
+    url("./OpenSans-Bold.ttf") format("truetype");
+}
