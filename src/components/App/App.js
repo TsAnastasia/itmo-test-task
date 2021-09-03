@@ -11,6 +11,7 @@ const App = () => {
 
   React.useEffect(() => {
     dispatch(recieveAuth());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -2,9 +2,9 @@ import React from "react";
 
 const MarketPage = () => {
   return (
-    <main className="app__main">
-      <h1 className="app__title">Market</h1>
-    </main>
+    <section className="market-page">
+      <h1 className="market-page__title">Market</h1>
+    </section>
   );
 };
 

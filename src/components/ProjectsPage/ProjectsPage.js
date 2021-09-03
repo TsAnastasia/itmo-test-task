@@ -1,10 +1,11 @@
 import React from "react";
+import Navigation from "../Navigation/Navigation";
 
 const ProjectsPage = () => {
   return (
-    <main className="app__main">
-      <h1 className="app__title">Projects</h1>
-    </main>
+    <section className="projects-page">
+      <h1 className="projects-page__title">Projects</h1>
+    </section>
   );
 };
 
