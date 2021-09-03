@@ -1,4 +1,4 @@
-import { authorize } from "../../utils/authApi";
+import { authorize, checkToken } from "../../utils/authApi";
 import * as types from "../types";
 
 export function signIn(values) {
@@ -27,6 +27,30 @@ export function signIn(values) {
         });
         // dispatch(hideLoader());
       });
+  };
+}
+
+export function recieveAuth() {
+  return (dispatch, getState) => {
+    const { token } = getState().auth;
+    if (!token) {
+      dispatch({
+        type: types.RECIEVE_AUTH_FAILURE,
+      });
+    }
+    return checkToken(token)
+      .then((data) => {
+        dispatch({
+          type: types.RECIEVE_AUTH_SUCCESS,
+          payload: { user: data.email },
+        });
+      })
+      .catch((reason) =>
+        dispatch({
+          type: types.RECIEVE_AUTH_FAILURE,
+          payload: reason,
+        })
+      );
   };
 }
 

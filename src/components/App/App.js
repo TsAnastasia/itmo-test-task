@@ -1,11 +1,17 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MainPage from "../MainPage/MainPage";
 import AppPage from "../AppPage/AppPage";
+import { recieveAuth } from "../../redux/actions";
 
 const App = () => {
+  const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuth);
+
+  React.useEffect(() => {
+    dispatch(recieveAuth());
+  }, []);
 
   return (
     <div className="app">
