@@ -1,0 +1,16 @@
+.market-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.market-page__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  text-decoration: center;
+  color: #000000;
+}

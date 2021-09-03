@@ -1,6 +1,7 @@
 .app-page {
+  min-height: 100vh;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
-  min-height: 100vh;
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
 }
