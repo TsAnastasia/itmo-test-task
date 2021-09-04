@@ -4,7 +4,7 @@ import * as types from "../types";
 export function signIn(values) {
   return (dispatch) => {
     const { isRemember, email } = values;
-    // dispatch(showLoader());
+    dispatch({ type: types.SHOW_LOADING });
     dispatch({ type: types.SIGNIN_REQUEST });
     return authorize(values.email, values.password)
       .then((data) => {
@@ -18,14 +18,14 @@ export function signIn(values) {
           type: types.SIGNIN_SUCCESS,
           payload: { token: data.token, user: email },
         });
-        // dispatch(hideLoader());
+        dispatch({ type: types.HIDE_LOADING });
       })
       .catch((error) => {
         dispatch({
           type: types.SIGNIN_FAILURE,
           payload: error,
         });
-        // dispatch(hideLoader());
+        dispatch({ type: types.HIDE_LOADING });
       });
   };
 }

@@ -7,3 +7,6 @@ export const RECIEVE_AUTH_SUCCESS = "auth/RECIEVE_AUTH_SUCCESS";
 export const RECIEVE_AUTH_FAILURE = "auth/RECIEVE_AUTH_FAILURE";
 
 export const LOGOUT_SUCCESS = "auth/LOGOUT_SUCCESS";
+
+export const SHOW_LOADING = "auth/SHOW_LOADING";
+export const HIDE_LOADING = "auth/HIDE_LOADING";

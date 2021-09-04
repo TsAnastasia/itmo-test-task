@@ -2,7 +2,7 @@ import * as types from "../types";
 
 const token = localStorage.getItem("token");
 
-const initialStore = { isAuth: !!token, user: null, token };
+const initialStore = { isAuth: !!token, user: null, token, isLoading: false };
 
 export default function auth(state = initialStore, action) {
   switch (action.type) {
@@ -27,6 +27,16 @@ export default function auth(state = initialStore, action) {
         isAuth: false,
         user: null,
         token: "",
+      };
+    case types.SHOW_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case types.HIDE_LOADING:
+      return {
+        ...state,
+        isLoading: false,
       };
     default:
       return state;

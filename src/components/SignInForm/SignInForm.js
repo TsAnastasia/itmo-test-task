@@ -1,11 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import "./SignInForm.css";
 import { signIn } from "../../redux/actions/auth";
 
 const SingInForm = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
   return (
     <Formik
@@ -33,7 +34,7 @@ const SingInForm = () => {
             Forgot password?
           </button>
           <button type="submit" className="sign-in__submit">
-            Sign In
+            {`${isLoading ? "Loading..." : "Sign In"}`}
           </button>
           <label className="sign-in__remember">
             <Field
