@@ -33,7 +33,11 @@ const SingInForm = () => {
           <button type="button" className="sign-in__forgot">
             Forgot password?
           </button>
-          <button type="submit" className="sign-in__submit">
+          <button
+            type="submit"
+            className="sign-in__submit"
+            disabled={!values.email}
+          >
             {`${isLoading ? "Loading..." : "Sign In"}`}
           </button>
           <label className="sign-in__remember">

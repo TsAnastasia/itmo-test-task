@@ -74,6 +74,12 @@
   border: 0;
   border-radius: 4px;
   background: #0298a9;
+  cursor: pointer;
+}
+
+.sign-in__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .sign-in__remember {
