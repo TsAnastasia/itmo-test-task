@@ -6,48 +6,57 @@ import { logout } from "../../redux/actions";
 
 const Navigation = () => {
   const dispatch = useDispatch();
+
   return (
     <nav className="navigation">
-      <div className="navigation__user"></div>
+      <div className="navigation__user">
+        <div className="navigation__user-avatar"></div>
+        <div className="navigation__user-info">
+          <p className="navigation__user-name">User/1</p>
+          <p className="navigation__user-status">Team member Tube</p>
+        </div>
+      </div>
       <ul className="navigation__menu">
         <li className="navigation__item">
           <NavLink
             to="/market"
-            className="navigation__link"
+            className="navigation__link navigation__link_to_market"
             activeClassName="navigation__link_active"
           >
-            Market
+            <span className="navigation__link-text">Market</span>
           </NavLink>
         </li>
         <li className="navigation__item">
           <NavLink
             to="/projects"
-            className="navigation__link"
+            className="navigation__link navigation__link_to_projects"
             activeClassName="navigation__link_active"
           >
-            Projects
+            <span className="navigation__link-text">Projects</span>
           </NavLink>
         </li>
         <li className="navigation__item">
           <NavLink
             to="/user"
-            className="navigation__link"
+            className="navigation__link navigation__link_to_user"
             activeClassName="navigation__link_active"
           >
-            User
+            <span className="navigation__link-text">User</span>
           </NavLink>
         </li>
       </ul>
       <div className="navigation__buttons">
-        <Link to="/">Main Page</Link>
+        <Link to="/" className="navigation__button navigation__button_to_home">
+          <span className="navigation__button-text">Main Page</span>
+        </Link>
         <button
           type="button"
-          className="navigation__button"
+          className="navigation__button navigation__button_to_logout"
           onClick={() => {
             dispatch(logout());
           }}
         >
-          Logout
+          <span className="navigation__button-text">Logout</span>
         </button>
       </div>
     </nav>
