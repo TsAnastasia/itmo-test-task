@@ -1,0 +1,107 @@
+.main-page-nav {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-page-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 600px;
+  min-height: 1px;
+}
+
+.main-page-nav__link {
+  margin: 0;
+  position: absolute;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 18px;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.main-page-nav__link_to_market {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(155px - 50%), calc(-155px - 50%));
+}
+
+.main-page-nav__link_to_projects {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-105px - 50%), calc(-25px - 50%));
+}
+
+.main-page-nav__link_to_user {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(90px - 50%), calc(165px - 50%));
+}
+
+.main-page-nav__link_disable {
+  cursor: default;
+}
+
+.main-page-nav__link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  z-index: -1;
+  border-radius: 20px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+:not(.main-page-nav__link_disable).main-page-nav__link:hover::before {
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.6);
+}
+
+.main-page-nav__link_to_market::before {
+  background-color: #86bd24;
+}
+
+.main-page-nav__link_disable.main-page-nav__link_to_market::before {
+  background-color: #cfdeae;
+}
+
+.main-page-nav__link_to_projects::before {
+  background-color: #414549;
+}
+
+.main-page-nav__link_disable.main-page-nav__link_to_projects::before {
+  background-color: #b9b9b7;
+}
+
+.main-page-nav__link_to_user::before {
+  background-color: #0298a9;
+}
+
+.main-page-nav__link_disable.main-page-nav__link_to_user::before {
+  background-color: #a8d3d6;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-page-nav__list {
+    min-width: 380px;
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-page-nav__list {
+    min-width: 300px;
+    transform: scale(0.5);
+  }
+}
