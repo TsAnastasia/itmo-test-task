@@ -37,20 +37,21 @@ export function recieveAuth() {
       dispatch({
         type: types.RECIEVE_AUTH_FAILURE,
       });
-    }
-    return checkToken(token)
-      .then((data) => {
-        dispatch({
-          type: types.RECIEVE_AUTH_SUCCESS,
-          payload: { user: data.email },
-        });
-      })
-      .catch((reason) =>
-        dispatch({
-          type: types.RECIEVE_AUTH_FAILURE,
-          payload: reason,
+    } else {
+      return checkToken(token)
+        .then((data) => {
+          dispatch({
+            type: types.RECIEVE_AUTH_SUCCESS,
+            payload: { user: data.email },
+          });
         })
-      );
+        .catch((reason) =>
+          dispatch({
+            type: types.RECIEVE_AUTH_FAILURE,
+            payload: reason,
+          })
+        );
+    }
   };
 }
 

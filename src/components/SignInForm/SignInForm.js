@@ -1,6 +1,7 @@
-import { Formik, Form, Field } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Formik, Form, Field } from "formik";
+import "./SignInForm.css";
 import { signIn } from "../../redux/actions/auth";
 
 const SingInForm = () => {
